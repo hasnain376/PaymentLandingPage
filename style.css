@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "montserrat";
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+:root {
+  --background-color: #1e1e1e;
+  --primary-color: #fff;
+  --buttonsbackground-color: #eadcff;
+}
+
+/* Header Section Design */
+
+header {
+  padding: 2rem 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  gap: 2.5vw;
+  list-style: none;
+  align-items: center;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: all 0.3s ease-in;
+}
+
+header nav ul li a:hover {
+  font-weight: 800;
+  color: var(--buttonsbackground-color);
+  transform: scale(1.1);
+}
+
+.Btn-container button , .navLink-Btn button {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  background-color: var(--buttonsbackground-color);
+  border-radius: 6px;
+  border-color: var(--primary-color);
+  cursor: pointer;
+  margin: 0 0.2rem;
+  transition: all 0.3s ease-in;
+}
+
+.navLink-Btn{
+  display: none;
+}
+
+.Btn-container button:hover {
+  transform: scale(1.1);
+  font-weight: 800;
+}
+
+.menu-icon{
+  display: none;
+}
+
+.bx-menu-alt-left{
+  font-size: 3rem;
+}
+
+/* Hero Section Design */
+
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid white; */
+  height: 100vh;
+}
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-container {
+  min-width: 50%;
+  width: 50%;
+}
+
+.text-container h6 {
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.text-container h1 {
+  font-size: 4vw;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.text-container button {
+  padding: 0.8rem 1.2rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--buttonsbackground-color);
+  font-weight: 800;
+  gap: 6px;
+  border-radius: 12px;
+}
+
+.text-container button span .bx {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  animation: arrow infinite ease-out 1.8s;
+}
+
+@keyframes arrow {
+  from {
+    transform: translatey(-8px);
+    opacity: 0;
+  }
+  to {
+    transform: translatey(0px);
+  }
+}
+
+.image-container img {
+  width: 35vw;
+  height: 35vw;
+}
+
+/* Laptop 1024px Responsive Design */
+@media screen and (max-width: 1024px){
+  header nav h1{
+    font-size: 2rem;
+  }
+  header nav ul li a , .Btn-container button{
+    font-size: 0.8rem;
+  }
+
+
+
+
+}
+
+/* Laptop 78px Responsive Design */
+@media screen and (max-width: 768px){
+  header{
+    position: relative;
+  }
+  header nav ul{
+    border: 2px solid white;
+    background-color: var(--background-color);
+    position: absolute;
+    left: -100%;
+    opacity: 0;
+    bottom: -50vh;
+    flex-direction: column;
+    width: 50vw;
+    z-index: 1;
+    /* padding: 4rem; */
+    padding-top: 2rem;
+    gap: 2rem;
+    align-items: center;
+    border-radius: 12px;
+    height: 50vh;
+    transition: all 0.8s ease-in;
+  }
+
+  header nav ul li a{
+    font-size: 1rem;
+    margin: 2rem 0;
+  }
+
+  .navLink-Btn {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+  }
+  .menu-icon{
+    display: block;
+  }
+
+  .Btn-container{
+    display: none;
+  }
+}
+
+
+/* Laptop 425px Responsive Design */
+@media screen and (max-width : 425px) {
+  .hero-container{
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+
+  .image-container img{
+    width: 100%;
+    height: 100%;
+  }
+
+  .text-container {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .text-container h1{
+    font-size: 2rem;
+  }
+}
